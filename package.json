@@ -1,0 +1,59 @@
+{
+  "name": "@mukundakatta/streamparse",
+  "version": "1.0.0",
+  "description": "Streaming JSON parser that yields partial valid trees as tokens arrive. Built for LLM tool-call payloads, structured output streams, and any place a regular JSON.parse waits too long.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test --import tsx test/*.test.ts",
+    "test:watch": "node --test --watch --import tsx test/*.test.ts",
+    "bench": "tsx bench/bench.ts",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "json",
+    "streaming",
+    "parser",
+    "partial",
+    "incremental",
+    "llm",
+    "ai",
+    "tool-calls",
+    "structured-output",
+    "anthropic",
+    "openai"
+  ],
+  "author": "Mukunda Katta <mukunda.vjcs6@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/MukundaKatta/streamparse#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MukundaKatta/streamparse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MukundaKatta/streamparse/issues"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false
+}
