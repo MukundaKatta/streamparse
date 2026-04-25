@@ -446,6 +446,18 @@ export class JsonStreamParser {
     if (isWhitespace(ch)) return;
     if (this.lenient && this.tryStartComment(ch)) return;
     if (ch === '}') {
+      // In strict mode, `}` is only legal here when the object is still empty.
+      // Otherwise we got here via a trailing comma, which is illegal.
+      const top = this.stack[this.stack.length - 1];
+      if (
+        !this.lenient &&
+        top &&
+        top.kind === 'object' &&
+        Object.keys(top.obj).length > 0
+      ) {
+        this.fail("unexpected '}' (trailing comma not allowed in strict mode)");
+        return;
+      }
       this.popContainer();
       this.afterValueCommit();
       return;
