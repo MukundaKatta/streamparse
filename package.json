@@ -1,10 +1,13 @@
 {
   "name": "@mukundakatta/streamparse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Streaming JSON parser that yields partial valid trees as tokens arrive. Built for LLM tool-call payloads, structured output streams, and any place a regular JSON.parse waits too long.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "bin": {
+    "streamparse": "dist/cli.js"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -43,6 +46,7 @@
     "url": "https://github.com/MukundaKatta/streamparse/issues"
   },
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "tsx": "^4.7.0",
     "typescript": "^5.4.0"
   },

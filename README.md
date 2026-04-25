@@ -44,10 +44,23 @@ Every agent framework ships its own broken version of this. They either:
 ## Install
 
 ```bash
-npm install @mukundakatta/streamparse
+npm install @mukundakatta/streamparse        # library
+npm install -g @mukundakatta/streamparse     # also installs `streamparse` CLI
+brew install mukundakatta/tools/streamparse  # via Homebrew tap
 ```
 
 Zero runtime dependencies. ESM only. Node 18+. Works in the browser.
+
+## CLI
+
+```bash
+echo '{"name":"Cl' | streamparse parse -
+# { "name": "Cl" }
+
+streamparse extract response.txt    # strip prose / fences / comments
+streamparse validate config.json    # strict-mode RFC 8259 validation
+streamparse --help
+```
 
 ## API
 

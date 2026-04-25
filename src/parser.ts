@@ -123,12 +123,7 @@ export class JsonStreamParser {
     for (let i = 0; i < chunk.length; i++) {
       const ch = chunk[i] as string;
       this.bytesIn++;
-      try {
-        this.step(ch);
-      } catch (err) {
-        this.fail((err as Error).message);
-        return;
-      }
+      this.step(ch);
       if ((this.state as State) === 'errored') return;
     }
     this.emitPartial();

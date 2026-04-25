@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 — 2026-04-25
+
+- Add `streamparse` CLI: `parse`, `extract`, `validate` subcommands.
+- Cleaner error messages (no double `streamparse:` prefix).
+- Homebrew formula at `mukundakatta/tools`.
+
 ## 1.0.0 — 2026-04-25
 
 Initial release.
