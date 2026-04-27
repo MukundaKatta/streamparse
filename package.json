@@ -59,5 +59,9 @@
     "LICENSE",
     "CHANGELOG.md"
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "funding": [
+    "https://github.com/sponsors/MukundaKatta",
+    "https://agent-stack.dev"
+  ]
 }
