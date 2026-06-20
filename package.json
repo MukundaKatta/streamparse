@@ -46,7 +46,7 @@
     "url": "https://github.com/MukundaKatta/streamparse/issues"
   },
   "devDependencies": {
-    "@types/node": "^25.6.0",
+    "@types/node": "^26.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.4.0"
   },
